@@ -1,0 +1,5 @@
+{
+  "name": "Spinal App",
+  "description": "An app to guide bartenders through daily tasks and stocktake procedures, from shift start to clock-out, ensuring a streamlined and accurate workflow.",
+  "requestFramePermissions": []
+}
