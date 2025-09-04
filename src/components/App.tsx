@@ -38,7 +38,9 @@ const App: React.FC = () => {
   const [closingStock, setClosingStock] = useState<StockData>(JSON.parse(JSON.stringify(INITIAL_STOCK_DATA)));
   const [newStockDeliveries, setNewStockDeliveries] = useState<NewStockDelivery[]>([]);
 
-  const isApproved = auth0User && !auth0User['https://spinalapp.com/roles']?.includes('pending_approval');
+  // "Deny by Default" logic: User is approved only if they have an assigned role.
+  const roles = auth0User?.['https://spinalapp.com/roles'] as string[] || [];
+  const isApproved = roles.includes('Normal User') || roles.includes('Admin');
   
   useEffect(() => {
     if (isAuthenticated && auth0User) {
