@@ -13,7 +13,7 @@ import Button from './ui/Button';
 import Header from './ui/Header';
 
 // The Google Sheet URL is now securely loaded from an environment variable
-const GOOGLE_SHEET_WEB_APP_URL = (import.meta as any).env.VITE_GOOGLE_SHEET_WEB_APP_URL;
+const GOOGLE_SHEET_WEB_APP_URL = import.meta.env.VITE_GOOGLE_SHEET_WEB_APP_URL;
 
 const App: React.FC = () => {
   const { 

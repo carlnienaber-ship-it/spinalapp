@@ -9,9 +9,8 @@ if (!rootElement) {
   throw new Error("Could not find root element to mount to");
 }
 
-// Fix: Cast `import.meta` to `any` to allow access to `.env` properties without vite/client types.
-const auth0Domain = (import.meta as any).env.VITE_AUTH0_DOMAIN;
-const auth0ClientId = (import.meta as any).env.VITE_AUTH0_CLIENT_ID;
+const auth0Domain = import.meta.env.VITE_AUTH0_DOMAIN;
+const auth0ClientId = import.meta.env.VITE_AUTH0_CLIENT_ID;
 
 if (!auth0Domain || !auth0ClientId) {
   throw new Error("Auth0 domain or client ID not configured. Make sure VITE_AUTH0_DOMAIN and VITE_AUTH0_CLIENT_ID are set in your environment variables.");
