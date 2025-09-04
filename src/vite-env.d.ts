@@ -1,5 +1,5 @@
-// Manually define the types for Vite environment variables to fix issues with `vite/client` type resolution.
-// This resolves "Cannot find type definition file for 'vite/client'" and "Property 'env' does not exist on type 'ImportMeta'".
+// Fix: Replaced the failing `/// <reference types="vite/client" />` with a manual definition
+// for `import.meta.env` to resolve TypeScript errors across the project.
 interface ImportMetaEnv {
   readonly VITE_AUTH0_DOMAIN: string;
   readonly VITE_AUTH0_CLIENT_ID: string;
